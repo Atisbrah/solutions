@@ -1,0 +1,12 @@
+//Sum of a number and its halves
+
+public class HalvingSum {
+    public static int halvingSum(int n) {
+        int result = n;
+        while (n > 1) {
+            n = n / 2;
+            result += n;
+        }
+        return result;
+    }
+}
