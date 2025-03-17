@@ -1,0 +1,15 @@
+import java.util.List;
+import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
+
+public class MyLanguages {
+  public static List<String> myLanguages(final Map<String, Integer> results) {
+    
+    return results.entrySet().stream()  // Stream through the map's entries
+                .filter(entry -> entry.getValue() >= 60)  // Filter scores >= 60
+                .sorted((entry1, entry2) -> entry2.getValue().compareTo(entry1.getValue()))  // Sort by score in descending order
+                .map(Map.Entry::getKey)  // Extract only the language names
+                .collect(Collectors.toList());  // Collect the results into a list
+  }
+}
