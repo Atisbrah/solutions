@@ -1,3 +1,5 @@
+/*Does the number's square form ends with itself*/
+
 public class Solution {
   
     public static String autoMorphic(int number) {
@@ -9,4 +11,27 @@ public class Solution {
         return String.valueOf(squareNumber).endsWith(String.valueOf(number));
     }
   
+}
+
+/*Or with modulus + protection agains division by 0*/
+
+public class Solution {
+
+    public static String autoMorphic(int number) {
+        if (number < 0) return "Not!!"; // negatív szám nem lehet automorf
+
+        int square = number * number;
+        return endsWithDigits(square, number) ? "Automorphic" : "Not!!";
+    }
+
+    public static boolean endsWithDigits(int square, int number) {
+        if (number == 0) return square == 0; // külön eset: 0 automorf, mert 0^2 = 0
+        int length = (int) Math.log10(number) + 1;
+        int modulus = (int) Math.pow(10, length);
+
+        // extra védelem, bár itt gyakorlatilag sosem nulla
+        if (modulus == 0) return false;
+
+        return square % modulus == number;
+    }
 }
