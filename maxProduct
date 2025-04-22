@@ -1,0 +1,20 @@
+import java.util.Arrays;
+
+/*Given an array and a sub_size, multiply the biggest n numbers into a result*/
+
+public class Solution {
+    public static long maxProduct(int[] numbers, int sub_size) {
+        if (sub_size > numbers.length) {
+            throw new IllegalArgumentException("sub_size is greater than the array size");
+        }
+        
+        Arrays.sort(numbers);
+        long result = 1;
+        
+        for (int i = numbers.length - 1; i >= numbers.length - sub_size; i--) {
+            result *= numbers[i];
+        }
+        
+        return result;
+    }
+}
