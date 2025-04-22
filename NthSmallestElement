@@ -1,0 +1,14 @@
+import java.util.Arrays;
+
+/*Find the Nth smallest element in an unordered final int array*/
+
+public class Kata {
+    public static int nthSmallest(final int[] arr, final int n) {
+        if (n < 1 || n > arr.length) {
+            throw new IllegalArgumentException("n is out of bounds");
+        }
+        int[] copy = Arrays.copyOf(arr, arr.length);
+        Arrays.sort(copy);
+        return copy[n - 1];
+    }
+}
