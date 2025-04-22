@@ -1,0 +1,12 @@
+public class Solution {
+  
+    public static String autoMorphic(int number) {
+      int squareNumber = number * number;
+      return endsWith(squareNumber, number) ? "Automorphic" : "Not!!";
+    }
+  
+    public static boolean endsWith(int squareNumber, int number) {
+        return String.valueOf(squareNumber).endsWith(String.valueOf(number));
+    }
+  
+}
