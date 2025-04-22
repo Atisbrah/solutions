@@ -1,6 +1,6 @@
-import java.util.Arrays;
-
 /*Given an array and a sub_size, multiply the biggest n numbers into a result*/
+
+import java.util.Arrays;
 
 public class Solution {
     public static long maxProduct(int[] numbers, int sub_size) {
