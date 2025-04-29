@@ -1,0 +1,26 @@
+public class GenerateC {
+    public static String generateC(int size) {
+        StringBuilder sb = new StringBuilder();
+
+        // Top part
+        appendLines(sb, size, size * 5);
+
+        // Middle part
+        appendLines(sb, size * 3, size);
+
+        // Bottom part
+        appendLines(sb, size, size * 5);
+
+        // Remove last newline
+        sb.setLength(sb.length() - 1);
+
+        return sb.toString();
+    }
+
+    private static void appendLines(StringBuilder sb, int lineCount, int width) {
+        String line = "C".repeat(width) + "\n";
+        for (int i = 0; i < lineCount; i++) {
+            sb.append(line);
+        }
+    }
+}
